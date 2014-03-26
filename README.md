@@ -10,7 +10,7 @@ Nodejs cli tool for benchmarking websocket servers. Currently supports:
 ## About this fork
 
 * Add [SockJS](https://github.com/sockjs) support
-* Add client uniqueKey. See generator file example
+* Add client uniqueKey(See generator file example)
 
 ## Installation
 
@@ -110,7 +110,7 @@ generator structure :
          // client.publish('/test', { hello: 'world' });
 
          // You can use unique key for each client.
-         // var unique = client.workerIndex + "_" client.clientIndex;
+         // var unique = client.workerIndex + "_" + client.clientIndex;
 
          done();
        }
