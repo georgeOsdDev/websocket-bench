@@ -1,15 +1,27 @@
 # websocket bench [![Build Status](https://travis-ci.org/M6Web/websocket-bench.png?branch=master)](https://travis-ci.org/M6Web/websocket-bench)
 
-
 Nodejs cli tool for benchmarking websocket servers. Currently supports:
+
 * [Socket.IO](https://github.com/LearnBoost/socket.io)
 * [Engine.IO](https://github.com/LearnBoost/engine.io)
 * [Faye](https://github.com/faye/faye)
 * [Primus](https://github.com/primus/primus)
 
+## About this fork
+
+* Add [SockJS](https://github.com/sockjs) support
+* Add client uniqueKey. See generator file example
+
 ## Installation
 
-   `npm install -g websocket-bench`
+Install original
+
+    npm install -g websocket-bench
+
+Install this fork
+
+    git clone https://github.com/georgeOsdDev/websocket-bench.git
+    ln -s websocket-bench/bin/websocket-bench ~/path/to/yourbin/websocket-bench
 
 ## Running Tests/Linting
 
@@ -74,7 +86,7 @@ generator structure :
         * @param {client} client connection
         * @param {done} callback function(err) {}
         */
-       exports.onConnect : function(client, done) {
+       onConnect : function(client, done) {
          // Faye client
          // client.subscribe('/channel', function(message) { });
 
@@ -92,10 +104,14 @@ generator structure :
         * @param {client} client connection
         * @param {done} callback function(err) {}
         */
-       exports.sendMessage : function(client, done) {
+       sendMessage : function(client, done) {
          // Example:
          // client.emit('test', { hello: 'world' });
          // client.publish('/test', { hello: 'world' });
+
+         // You can use unique key for each client.
+         // var unique = client.workerIndex + "_" client.clientIndex;
+
          done();
        }
     };
