@@ -25,7 +25,8 @@
     "winston": "~0.7.1",
     "socket.io": "~0.9.14",
     "primus": "~1.5.2",
-    "sockjs-client-node": "0.0.0"
+    "sockjs-client-node": "0.0.0",
+    "ws": "^0.4.31"
   },
   "devDependencies": {
     "chai": "~1.6.0",
